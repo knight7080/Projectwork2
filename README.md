@@ -1,59 +1,118 @@
-## Title of the Project
-Small description about the project like one below
-The integration of a chatbot within a hostel booking system, aimed at streamlining the reservation process for students and improving the overall user experience.
+# Text-to-SQL Gemini Project
 
-## About
-<!--Detailed Description about the project-->
-Tailored Chatbot for Hostel Booking System is a project designed to integrate a chatbot that leverages advanced natural language processing techniques to understand and respond to user queries to the hostel booking system. Traditional hostel booking processes are often time-consuming and involve manual searches and extensive communication with hostel staff. This project seeks to overcome these challenges by creating an easy-to-use chatbot interface that assists students in addressing inquiries.
+Text-to-SQL application that leverages Google’s Gemini LLM to transform natural language input into SQL queries. The application reads a database schema, processes user inputs, and generates SQL queries to retrieve data based on those inputs. It is built with Python and Streamlit, making it suitable for both database management and natural language processing tasks.
+
+
+
+https://github.com/user-attachments/assets/89f436d0-9d92-4b44-bda4-16cbcabc74dc
+
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Modules](#modules)
+- [Example Usage](#example-usage)
+- [Acknowledgements](#acknowledgements)
+
+---
 
 ## Features
-<!--List the features of the project as shown below-->
-- Implements advance neural network method.
-- A framework based application for deployment purpose.
-- High scalability.
-- Less time complexity.
-- A specific scope of Chatbot response model, using json data format.
 
-## Requirements
-<!--List the requirements of the project as shown below-->
-* Operating System: Requires a 64-bit OS (Windows 10 or Ubuntu) for compatibility with deep learning frameworks.
-* Development Environment: Python 3.6 or later is necessary for coding the sign language detection system.
-* Deep Learning Frameworks: TensorFlow for model training, MediaPipe for hand gesture recognition.
-* Image Processing Libraries: OpenCV is essential for efficient image processing and real-time hand gesture recognition.
-* Version Control: Implementation of Git for collaborative development and effective code management.
-* IDE: Use of VSCode as the Integrated Development Environment for coding, debugging, and version control integration.
-* Additional Dependencies: Includes scikit-learn, TensorFlow (versions 2.4.1), TensorFlow GPU, OpenCV, and Mediapipe for deep learning tasks.
+- **Dynamic Database Connection**: Connects to both SQL script files and SQLite databases, dynamically retrieving table schemas.
+- **Text-to-SQL Query Generation**: Generates SQL queries using Gemini LLM based on user-inputted natural language queries.
+- **Schema Visualization**: Displays database schema in a user-friendly layout with tables, columns, and data types.
+- **Customizable UI**: Streamlit-based interface with dark theme support for enhanced user experience.
 
-## System Architecture
-<!--Embed the system architecture diagram as shown below-->
+## Installation
 
-![Screenshot 2023-11-25 133637](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/a60c11f3-0a11-47fb-ac89-755d5f45c995)
+1. Clone the repository:
 
+   ```bash
+   git clone https://github.com/abhi526691/ATS-Resume-
+   cd Text-To-SQL-LLM
+   ```
 
-## Output
+2. Install the required packages:
 
-<!--Embed the Output picture at respective places as shown below as shown below-->
-#### Output1 - Name of the output
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-![Screenshot 2023-11-25 134037](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/8c2b6b5c-5ed2-4ec4-b18e-5b6625402c16)
+3. Set up the environment variables by creating a `.env` file and adding your Google Gemini API key:<br>
+   Get Your API KEY from [Gemini](https://ai.google.dev/gemini-api/docs/api-key)
 
-#### Output2 - Name of the output
-![Screenshot 2023-11-25 134253](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/5e05c981-05ca-4aaa-aea2-d918dcf25cb7)
+   ```
+   GOOGLE_API_KEY=your_google_api_key
+   ```
 
-Detection Accuracy: 96.7%
-Note: These metrics can be customized based on your actual performance evaluations.
+---
 
+## Usage
 
-## Results and Impact
-<!--Give the results and impact as shown below-->
-The Sign Language Detection System enhances accessibility for individuals with hearing and speech impairments, providing a valuable tool for inclusive communication. The project's integration of computer vision and deep learning showcases its potential for intuitive and interactive human-computer interaction.
+1. Run the application with the following command:
 
-This project serves as a foundation for future developments in assistive technologies and contributes to creating a more inclusive and accessible digital environment.
+   ```bash
+   streamlit run main.py
+   ```
 
-## Articles published / References
-1. N. S. Gupta, S. K. Rout, S. Barik, R. R. Kalangi, and B. Swampa, “Enhancing Heart Disease Prediction Accuracy Through Hybrid Machine Learning Methods ”, EAI Endorsed Trans IoT, vol. 10, Mar. 2024.
-2. A. A. BIN ZAINUDDIN, “Enhancing IoT Security: A Synergy of Machine Learning, Artificial Intelligence, and Blockchain”, Data Science Insights, vol. 2, no. 1, Feb. 2024.
+2. Upload a database file (.sql or .db) using the UI file uploader.
+3. Enter a natural language query describing the data you wish to retrieve from the database.
+4. View the generated SQL query and its results.
 
+---
 
+## Modules
 
+### `main.py`
 
+Contains the primary application code, initializing the database schema, generating SQL queries, and displaying the schema diagram.
+
+### `TTS/base_tts.py`
+
+Defines the `View` class, which provides methods for rendering UI elements in Streamlit, processing user input, and applying custom styles.
+
+### `TTS/db_management.py`
+
+Handles database management, including loading SQL files or SQLite databases, executing SQL queries, and retrieving schema information.
+
+### `TTS/retrieve_schema.py`
+
+Responsible for retrieving and transforming the schema, including visual representation in Streamlit.
+
+### `TTS/text_to_sql_gemini.py`
+
+Contains the logic for generating SQL queries from natural language input using the Google Gemini model.
+
+---
+
+## Example Usage
+
+1. Launch the application and upload a `.db` or `.sql` file.
+2. Enter a query, such as:
+
+   - "Show me all user details with active status."
+   - "Retrieve the top 5 orders sorted by date."
+
+3. The system will use the Gemini LLM to generate the SQL query based on the database schema and execute it, displaying the results.
+
+---
+
+## Acknowledgements
+
+- [Google Gemini LLM](https://cloud.google.com/): Used for text-to-SQL query generation.
+- [Streamlit](https://streamlit.io/): Provides the web interface for the application.
+
+## Contributor
+
+<p align="center">
+
+|                                                                                                                                                                                                                   <a href="https://github.com/abhi526691"><img src="https://avatars.githubusercontent.com/abhi526691" width="150px" height="150px" /></a>                                                                                                                                                                                                                    |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                                                                                                                                                                                             **[Abhishek Pandey](https://github.com/abhi526691)**                                                                                                                                                                                                                                                              |
+| <a href="https://github.com/abhi526691"><img src="https://cdn.iconscout.com/icon/free/png-256/github-108-438008.png" width="32px" height="32px"></a> <a href="https://www.instagram.com/_abhishek__pandey___/"><img src="https://cdn.iconscout.com/icon/free/png-512/free-instagram-216-721958.png" width="32px" height="32px"></a> <a href="https://www.linkedin.com/in/abhishek-pandey-1515aa171/"><img src="https://i.ibb.co/Kx2GSrT/linkedin.png" width="32px" height="32px"></a><a href="https://www.facebook.com/abhishek10548"><img src="https://cdn.iconscout.com/icon/free/png-512/free-facebook-263-721950.png" width="32px" height="32px"></a> |
+
+This project demonstrates a powerful integration of LLMs with SQL databases, making it easy to retrieve data without needing in-depth knowledge of SQL syntax.
+"# Text2SQL" 
+# Text2SQL
